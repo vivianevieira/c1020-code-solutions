@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <div>
+        <label for="email">Email:</label>
+      </div>
+        <input type="text" name="email" id="email" size="15" />
+      <div>
+        Why is coding cool?
+      </div>
+      <select name="coding-cool-answer">
+        <option value="select" id="select">
+          <label for="select">Select an option</label>
+          </option>
+        <option value="interesting" id="interesting">
+          <label for="interesting">Because it's interesting</label>
+        </option>
+        <option value="fun" id="fun">
+          <label for="fun">Because it's fun</label>
+        </option>
+        <option value="powerful" id="powerful">
+          <label for="powerful">Because it's powerful</label>
+        </option>
+      </select>
+      <div>
+        Favorite language (choose one)
+      </div>
+      <input type="radio" name="fav-lang" value="html" id="html"/>
+      <label for="html">HTML</label>
+      <input type="radio" name="fav-lang" value="css" id="css"/>
+      <label for="css">CSS</label>
+      <input type="radio" name="fav-lang" value="js" id="js" />
+      <label for="js">JavaScript</label>
+      <div>
+        Would you like to sign up for more information?
+      </div>
+      <input type="checkbox" name="signup" value="signup" id="signup" />
+      <label for="signup">Sign me up!</label>
+      <div>
+        <label for="comments">Comments:</label>
+      </div>
+      <textarea name="comments" id="comments" cols="20" rows="8"></textarea>
+      <div>
+      <input type="submit" name="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>
