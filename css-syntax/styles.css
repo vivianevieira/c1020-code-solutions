@@ -20,14 +20,14 @@ article {
   font-size: 24px;
 }
 
-#html {
+h2#html {
   color: red;
 }
 
-#css {
+h2#css {
   color: green;
 }
 
-#js {
+h2#js {
   color: blue;
 }
