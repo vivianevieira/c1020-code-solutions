@@ -1,0 +1,43 @@
+#header {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Brandon Grotesque', Arial, Verdana, Tahoma, sans-serif;
+  font-weight: lighter;
+  color: #ec5d57;
+  letter-spacing: 0.2rem;
+}
+
+#form {
+  width: 30em;
+  padding: 1em;
+}
+
+.titles {
+  text-transform: uppercase;
+  margin-left: 10px;
+  font-family: 'Brandon Grotesque', Arial, Verdana, Tahoma, sans-serif;
+  font-size: 0.8em;
+}
+
+input,
+select {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  margin: 3px 0 12px 0;
+  border: 0.1rem solid lightgray;
+  font-family: 'Brandon Grotesque', Arial, Verdana, Tahoma, sans-serif;
+}
+
+button {
+  color: white;
+  background-color: #ec5d57;
+  border: 0;
+  text-transform: uppercase;
+  font-family: 'Brandon Grotesque', Arial, Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 20% / 50%;
+  padding: 0.5em 1em;
+  float: right;
+}
