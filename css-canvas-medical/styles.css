@@ -151,10 +151,10 @@ h2 {
   margin: 1rem 1rem 1rem 0;
 }
 
-.links-footer {
-  font-size: 1rem;
-}
-
 .links-footer > a {
   color: white;
+}
+
+.links-footer {
+  font-size: 1rem;
 }
