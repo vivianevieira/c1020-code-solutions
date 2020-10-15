@@ -1,0 +1,39 @@
+body {
+  font-family: DM Sans, Verdana, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+del {
+  color: lightgray;
+}
+
+ins {
+  text-decoration: none;
+  background-color: #f9f1e4;
+}
+
+.container {
+  margin: 0 auto;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  padding: 0 1rem;
+}
+
+.column > img {
+  height: 25rem;
+}
+
+.size {
+  color: lightgray;
+}
