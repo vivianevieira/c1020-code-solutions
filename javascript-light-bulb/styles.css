@@ -1,0 +1,27 @@
+.bg-on {
+  background-color: #fef9f2;
+}
+
+.bg-off {
+  background-color: black;
+}
+
+.circle {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: 20rem auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.on {
+  background-color: #fbeb84;
+  box-shadow: 0 0.2rem 0.4rem 0.4rem #fbf3c5;
+}
+
+.off {
+  background-color: #252525;
+  box-shadow: 0 0 0;
+}
