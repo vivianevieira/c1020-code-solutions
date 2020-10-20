@@ -3,7 +3,7 @@
 function compact(array) {
   var newArray = [];
   for (var i = 0; i < array.length; i++) {
-    if (array[i] != null) {
+    if (Boolean(array[i]) !== false) {
       newArray.push(array[i]);
     }
   }
