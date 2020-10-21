@@ -14,9 +14,6 @@
   display: flex;
   justify-content: center;
   align-content: center;
-}
-
-.on {
   background-color: #fbeb84;
   box-shadow: 0 0.2rem 0.4rem 0.4rem #fbf3c5;
 }

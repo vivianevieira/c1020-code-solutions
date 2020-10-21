@@ -1,15 +1,17 @@
-var container = document.querySelector('.circle');
-var background = document.querySelector('body');
+var isOn = false;
+
+var $container = document.querySelector('.circle');
+var $background = document.querySelector('body');
 
 function lightSwitch() {
-  var light;
-  if (container.className === 'circle on') {
-    light = 'off';
-  } else if (container.className === 'circle off') {
-    light = 'on';
+  isOn = !isOn;
+  if (isOn) {
+    $container.className = 'circle on';
+    $background.className = 'bg-on';
+  } else {
+    $container.className = 'circle off';
+    $background.className = 'bg-off';
   }
-  container.className = 'circle ' + light;
-  background.className = 'bg-' + light;
 }
 
-container.addEventListener('click', lightSwitch);
+$container.addEventListener('click', lightSwitch);
