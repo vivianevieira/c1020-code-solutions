@@ -9,14 +9,3 @@ form.addEventListener('submit', function (event) {
   console.log('Form data: ', formData);
   form.reset();
 });
-
-// var nameValue = form.elements.name.value;
-// var emailValue = form.elements.email.value;
-// var message = form.elements.message.value;
-
-// var formData = {};
-// formData.name = nameValue;
-// formData.email = emailValue;
-// formData.message = message;
-
-// console.log(formData);
