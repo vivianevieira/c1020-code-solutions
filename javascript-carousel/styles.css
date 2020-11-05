@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chevron {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.chevron:hover {
+  cursor: pointer;
+}
+
+.circles:hover {
+  cursor: pointer;
+}
+
+.carousel-circles {
+  font-size: 1rem;
+}

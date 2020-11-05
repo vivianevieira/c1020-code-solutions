@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="chevron">
+        <i class="fas fa-chevron-left" id="chevron-left"></i>
+      </div>
+      <div class="image-container">
+        <img src="images/001.png" class="images " data-view="1" alt="carousel-image">
+        <img src="images/004.png" class="images hidden" data-view="2" alt="carousel-image">
+        <img src="images/007.png" class="images hidden" data-view="3" alt="carousel-image">
+        <img src="images/025.png" class="images hidden" data-view="4" alt="carousel-image">
+        <img src="images/039.png" class="images hidden" data-view="5" alt="carousel-image">
+      </div>
+      <div class="chevron">
+        <i class="fas fa-chevron-right" id="chevron-right"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div id="circles-cont">
+        <i class="fas fa-circle circles" data-view="1"></i>
+        <i class="far fa-circle circles" data-view="2"></i>
+        <i class="far fa-circle circles" data-view="3"></i>
+        <i class="far fa-circle circles" data-view="4"></i>
+        <i class="far fa-circle circles" data-view="5"></i>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
