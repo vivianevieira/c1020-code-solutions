@@ -5,8 +5,6 @@ function countdown() {
   h1.textContent = newH1;
   if (h1.textContent === '0') {
     h1.textContent = '~Earth Beeeelooowww Us~';
-  }
-  if (h1.textContent === '~Earth Beeeelooowww Us~') {
     clearInterval(interval);
   }
 }
