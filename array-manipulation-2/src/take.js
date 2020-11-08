@@ -1,9 +1,14 @@
 /* eslint-disable no-unused-vars */
 function take(array, count) {
-  if (array.length > 0) {
-    array.length = count;
-  } else {
-    array = [];
+  var newArray = [];
+  for (var i = 0; i < array.length; i++) {
+    newArray.push(array[i]);
   }
-  return array;
+  if (array.length === 0) {
+    newArray = [];
+  } else {
+    newArray.length = count;
+  }
+
+  return newArray;
 }
