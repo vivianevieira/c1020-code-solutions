@@ -2,8 +2,7 @@
 
 function getValue(object, key) {
   var value;
-  for (var property in object) {
-    value = object[key];
-  }
+  value = object[key];
+
   return value;
 }
