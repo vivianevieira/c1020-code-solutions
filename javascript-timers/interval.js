@@ -1,9 +1,10 @@
 var h1 = document.querySelector('h1');
+var count = 4;
 
 function countdown() {
-  var newH1 = h1.textContent - 1;
-  h1.textContent = newH1;
-  if (h1.textContent === '0') {
+  count--;
+  h1.textContent = count;
+  if (count <= '0') {
     h1.textContent = '~Earth Beeeelooowww Us~';
     clearInterval(interval);
   }
