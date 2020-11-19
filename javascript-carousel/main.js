@@ -1,4 +1,4 @@
-var count = 1;
+var index = 0;
 var $circles = document.querySelectorAll('.circles');
 var $images = document.querySelectorAll('.images');
 
@@ -6,14 +6,14 @@ function updateCarousel() {
   for (var i = 0; i < $images.length; i++) {
     $images[i].className = 'images hidden';
     $circles[i].className = 'far fa-circle circles';
-    if (i === count) {
+    if (i === index) {
       $images[i].className = 'images';
       $circles[i].className = 'fas fa-circle circles';
     }
   }
-  count++;
-  if (count === $images.length) {
-    count = 0;
+  index++;
+  if (index === $images.length) {
+    index = 0;
   }
 }
 
@@ -36,7 +36,7 @@ $circlesCont.addEventListener('click', function () {
     if (circlesView === imagesView) {
       $images[i].className = 'images';
       $circles[i].className = 'fas fa-circle circles';
-      count = i;
+      index = i;
     }
   }
   callCarousel();
@@ -46,19 +46,19 @@ var $chevronLeft = document.querySelector('#chevron-left');
 
 $chevronLeft.addEventListener('click', function () {
   clearInterval(carousel);
-  var index = count - 1;
+  var indexChevron = index - 1;
   for (var i = 0; i < $images.length; i++) {
     $images[i].className = 'images hidden';
     $circles[i].className = 'far fa-circle circles';
-    if (i === index) {
+    if (i === indexChevron) {
       $images[i].className = 'images';
       $circles[i].className = 'fas fa-circle circles';
-      count = i;
+      index = i;
     }
-    if (index === -1) {
+    if (indexChevron === -1) {
       $images[$images.length - 1].className = 'images';
       $circles[$images.length - 1].className = 'fas fa-circle circles';
-      count = $images.length - 1;
+      index = $images.length - 1;
     }
   }
   callCarousel();
@@ -68,19 +68,19 @@ var $chevronRight = document.querySelector('#chevron-right');
 
 $chevronRight.addEventListener('click', function () {
   clearInterval(carousel);
-  var index = count + 1;
+  var indexChevron = index + 1;
   for (var i = 0; i < $images.length; i++) {
     $images[i].className = 'images hidden';
     $circles[i].className = 'far fa-circle circles';
-    if (i === index) {
+    if (i === indexChevron) {
       $images[i].className = 'images';
       $circles[i].className = 'fas fa-circle circles';
-      count++;
+      index++;
     }
-    if (index === $images.length) {
+    if (indexChevron === $images.length) {
       $images[0].className = 'images';
       $circles[0].className = 'fas fa-circle circles';
-      count = 0;
+      index = 0;
     }
   }
   callCarousel();
