@@ -14,7 +14,7 @@ Account.prototype.deposit = function (amount) {
     result = false;
   } else if (amount > 0) {
     result = true;
-    this.transactions.push({ deposit: amount });
+    this.transactions.push(new Transaction('deposit', amount));
   }
   return result;
 };
@@ -22,7 +22,7 @@ Account.prototype.deposit = function (amount) {
 Account.prototype.withdraw = function (amount) {
   if (amount > 0) {
     var result = true;
-    this.transactions.push({ withdraw: amount });
+    this.transactions.push(new Transaction('withdraw', amount));
   } else if (amount <= 0) {
     result = false;
   } else if (isNaN(amount)) {
@@ -41,10 +41,10 @@ Account.prototype.getBalance = function () {
   }
 
   for (var i = 0; i < this.transactions.length; i++) {
-    if (this.transactions[i].deposit !== undefined) {
-      deposits.push(this.transactions[i].deposit);
+    if (this.transactions[i].type === 'deposit') {
+      deposits.push(this.transactions[i].amount);
     } else {
-      withdraws.push(this.transactions[i].withdraw);
+      withdraws.push(this.transactions[i].amount);
     }
   }
 
