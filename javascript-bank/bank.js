@@ -16,6 +16,7 @@ Bank.prototype.openAccount = function (holder, balance) {
     result = account.number;
     this.nextAccountNumber++;
   }
+
   return result;
 };
 
