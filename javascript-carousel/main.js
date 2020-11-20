@@ -31,6 +31,27 @@ function update(index) {
   }
 }
 
+var $chevronLeft = document.querySelector('#chevron-left');
+
+$chevronLeft.addEventListener('click', function () {
+  index = previous(index);
+  update(index);
+});
+
+var $chevronRight = document.querySelector('#chevron-right');
+$chevronRight.addEventListener('click', function () {
+  index = next(index);
+  update(index);
+});
+
+var $circlesCont = document.querySelector('#circles-cont');
+
+$circlesCont.addEventListener('click', function () {
+  var circlesView = event.target.getAttribute('data-view');
+  index = circlesView;
+  update(index);
+});
+
 // function updateCarousel() {
 //   for (var i = 0; i < $images.length; i++) {
 //     $images[i].className = 'images hidden';
