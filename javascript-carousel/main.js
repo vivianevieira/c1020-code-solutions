@@ -48,6 +48,7 @@ var $circlesCont = document.querySelector('#circles-cont');
 
 $circlesCont.addEventListener('click', function () {
   var circlesView = event.target.getAttribute('data-view');
+  circlesView = parseInt(circlesView);
   index = circlesView;
   update(index);
 });
