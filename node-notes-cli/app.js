@@ -10,7 +10,7 @@ if (process.argv[2] === 'read') {
 
 if (process.argv[2] === 'create') {
   dataJson.notes[dataJson.nextId] = process.argv[3];
-  dataJson.nextId = parseInt(Object.keys(dataJson.notes)[Object.keys(dataJson.notes).length - 1]) + 1;
+  dataJson.nextId++;
   fs.writeFile('./data.json', JSON.stringify(dataJson, null, 2), err => {
     if (err) throw err;
   });
@@ -25,7 +25,6 @@ if (process.argv[2] === 'update') {
 
 if (process.argv[2] === 'delete') {
   delete dataJson.notes[parseInt(process.argv[3])];
-  dataJson.nextId = parseInt(Object.keys(dataJson.notes)[Object.keys(dataJson.notes).length - 1]) + 1;
   fs.writeFile('./data.json', JSON.stringify(dataJson, null, 2), err => {
     if (err) throw err;
   });
