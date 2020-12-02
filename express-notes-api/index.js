@@ -8,7 +8,7 @@ const jasonMiddleware = express.json();
 
 app.use(jasonMiddleware);
 
-const notesArray = [];
+let notesArray = [];
 
 function getNotes() {
   for (const notesKey in data.notes) {
@@ -16,11 +16,10 @@ function getNotes() {
   }
 }
 
-getNotes();
-
 app.get('/api/notes', (req, res, next) => {
-  res.status(200);
-  res.json(notesArray);
+  notesArray = [];
+  getNotes();
+  res.status(200).json(notesArray);
 });
 
 app.get('/api/notes/:id', (req, res, next) => {
@@ -46,11 +45,12 @@ app.post('/api/notes', (req, res, next) => {
     data.notes[noteId].id = noteId;
     const json = JSON.stringify(data, null, 2);
     fs.writeFile('./data.json', json, err => {
-      notesArray.push(data.notes[noteId]);
-      res.status(201).json({ content: `${noteContent.content}`, id: `${noteId}` });
       if (err) {
         res.status(500).json({ error: 'An unexpected error occurred.' });
-        process.exit(1);
+        console.error(err);
+      } else {
+        notesArray.push(data.notes[noteId]);
+        res.status(201).json({ content: `${noteContent.content}`, id: `${noteId}` });
       }
     });
   }
@@ -68,10 +68,11 @@ app.delete('/api/notes/:id', (req, res, next) => {
     fs.writeFile('./data.json', json, err => {
       if (err) {
         res.status(500).json({ error: 'An unexpected error occurred.' });
-        process.exit(1);
+        console.error(err);
+      } else {
+        res.sendStatus(204);
       }
     });
-    res.sendStatus(204);
   }
 });
 
@@ -90,10 +91,11 @@ app.put('/api/notes/:id', (req, res, next) => {
     fs.writeFile('./data.json', json, err => {
       if (err) {
         res.status(500).json({ error: 'An unexpected error occurred.' });
-        process.exit(1);
+        console.error(err);
+      } else {
+        res.status(200).json(data.notes[id]);
       }
     });
-    res.status(200).json(data.notes[id]);
   }
 });
 
