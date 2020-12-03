@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 20rem auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+}
+
+.next-key{
+  border-bottom: solid;
+}
+
+.correct-key {
+  color: rgb(88, 218, 88);
+}
+
+.incorrect-key {
+  color: red;
+  border-bottom: solid;
+}
