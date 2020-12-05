@@ -47,6 +47,40 @@ app.post('/api/grades', (req, res) => {
     });
 });
 
+app.put('/api/grades/:gradeId', (req, res) => {
+  const gradeId = parseInt(req.params.gradeId, 10);
+  const bodyContent = req.body;
+  const gradeScore = parseInt(bodyContent.score, 10);
+  const values = [bodyContent.name, bodyContent.course, gradeScore, gradeId];
+
+  if (!Number.isInteger(gradeId) || gradeId <= 0) {
+    res.status(400).json({
+      error: 'gradeId must be a positive integer'
+    });
+    return;
+  }
+  if (bodyContent.name === undefined || bodyContent.course === undefined || bodyContent.score === undefined) {
+    res.status(400).json({
+      error: 'invalid grade entry'
+    });
+    return;
+  }
+  if (!Number.isInteger(gradeScore) || gradeScore < 1 || gradeScore > 100) {
+    res.status(400).json({ error: 'grade must be a number from 1 to 100' });
+    return;
+  }
+
+  const sql = `
+  update "grades"
+     set "name" = $1,
+        "course" = $2,
+        "score" = $3
+  where "gradeId" = $4
+  `;
+
+  res.send(values);
+});
+
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
