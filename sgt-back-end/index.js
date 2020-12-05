@@ -78,7 +78,19 @@ app.put('/api/grades/:gradeId', (req, res) => {
   where "gradeId" = $4
   `;
 
-  res.send(values);
+  db.query(sql, values)
+    .then(result => {
+      const grade = result.rows;
+      if (!grade) {
+        res.status(404).json({ error: `Cannot find grade with gradeId ${gradeId}` });
+      } else {
+        res.status(200).json(grade);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred.' });
+    });
 });
 
 app.listen(3000, () => {
