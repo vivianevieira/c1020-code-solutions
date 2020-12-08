@@ -1,5 +1,4 @@
-function ExampleClass(type) {
-  this.type = type;
+class ExampleClass {
 }
 
 const example = new ExampleClass();
