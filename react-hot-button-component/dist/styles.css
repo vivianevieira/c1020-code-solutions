@@ -1,0 +1,36 @@
+.btn {
+  border: 2px solid black;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: medium;
+}
+
+.white-btn {
+  color: black;
+  background-color: white;
+}
+
+.blue-btn {
+  color: white;
+  background-color: rgba(5, 5, 89, 0.468);
+}
+
+.purple-btn {
+  color: white;
+  background-color: rgba(118, 11, 225, 0.379);
+}
+
+.red-btn {
+  color: white;
+  background-color: rgb(233, 89, 89);
+}
+
+.orange-btn {
+  color: black;
+  background-color: rgb(181, 118, 118);
+}
+
+.yellow-btn {
+  color: black;
+  background-color: yellow;
+}
