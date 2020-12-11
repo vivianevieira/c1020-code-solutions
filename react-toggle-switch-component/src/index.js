@@ -4,12 +4,17 @@ import ReactDOM from 'react-dom';
 class Toggle extends React.Component {
   constructor(props) {
     super(props);
-    this.changeToggle = this.changeToggle.bind(this);
+    this.toggleOff = this.toggleOff.bind(this);
+    this.toggleOn = this.toggleOn.bind(this);
     this.state = { isToggleOn: true };
   }
 
-  changeToggle() {
+  toggleOff() {
     this.setState({ isToggleOn: false });
+  }
+
+  toggleOn() {
+    this.setState({ isToggleOn: true });
   }
 
   render() {
@@ -17,7 +22,7 @@ class Toggle extends React.Component {
     if (isToggleOn) {
       return (
         <div className="outer-container">
-          <div className="container container-on" onClick={this.changeToggle}>
+          <div className="container container-on" onClick={this.toggleOff}>
             <div className=" circle circle-on" ></div>
           </div>
           ON
@@ -26,7 +31,7 @@ class Toggle extends React.Component {
     } else {
       return (
         <div className="outer-container">
-          <div className="container">
+          <div className="container" onClick={this.toggleOn}>
             <div className="circle"></div>
           </div>
         OFF
