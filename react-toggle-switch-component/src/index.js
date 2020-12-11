@@ -17,6 +17,7 @@ class Toggle extends React.Component {
     this.setState({ isToggleOn: true });
   }
 
+
   render() {
     const isToggleOn = this.state.isToggleOn;
     if (isToggleOn) {
