@@ -27,7 +27,7 @@ class MenuList extends React.Component {
   render() {
     const drawerOn = this.state.drawerOn;
     const listItems = links.map(link =>
-      <ListItem key={link.id} value={link} onClick={this.handleClick} />
+      <ListItem key={link.id} value={link} />
     );
     if (drawerOn) {
       return (
