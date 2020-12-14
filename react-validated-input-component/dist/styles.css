@@ -1,0 +1,25 @@
+label {
+  display: block;
+  font: 1rem 'Gill Sans', sans-serif;
+}
+
+input {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.red-x {
+  color: red;
+  font-size: 1.3rem;
+}
+
+.check {
+  font-size: 1.3rem;
+  color: rgb(58, 218, 58);
+}
+
+.error-msg {
+  font: 0.8rem 'Gill Sans', sans-serif;
+  color: red;
+}
