@@ -5,7 +5,6 @@ class PasswordForm extends React.Component {
     super(props);
     this.state = {
       value: '',
-      characters: 0,
       validated: false,
       error: 'req'
     };
@@ -14,7 +13,6 @@ class PasswordForm extends React.Component {
 
   handleChange(event) {
     this.setState({ value: event.target.value });
-    this.setState({ characters: event.target.value.length });
 
     if (event.target.value.length === 0) {
       this.setState({ validated: false });
