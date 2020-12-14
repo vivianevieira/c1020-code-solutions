@@ -6,7 +6,7 @@ class PasswordForm extends React.Component {
     this.state = {
       value: '',
       validated: false,
-      error: 'req'
+      error: 'A password is required.'
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -16,11 +16,11 @@ class PasswordForm extends React.Component {
 
     if (event.target.value.length === 0) {
       this.setState({ validated: false });
-      this.setState({ error: 'req' });
+      this.setState({ error: 'A password is required.' });
     }
     if (event.target.value.length > 0) {
       this.setState({ validated: false });
-      this.setState({ error: 'short' });
+      this.setState({ error: 'Your password is too short.' });
     }
     if (event.target.value.length >= 8) {
       this.setState({ validated: true });
@@ -37,19 +37,6 @@ class PasswordForm extends React.Component {
     }
   }
 
-  getErrorMsg() {
-    const errorMsg = this.state.error;
-    if (errorMsg === 'req') {
-      return 'A password is required.';
-    }
-    if (errorMsg === 'short') {
-      return 'Your password is too short.';
-    }
-    if (errorMsg === '') {
-      return '';
-    }
-  }
-
   getIconClass() {
     const validated = this.state.validated;
     if (validated) {
@@ -60,7 +47,7 @@ class PasswordForm extends React.Component {
 
   render() {
     const iconClass = this.getIconClass();
-    const message = this.getErrorMsg();
+    const message = this.state.error;
     const analyzeRegex = this.analyzeRegex();
     return (
       <form>
@@ -82,6 +69,6 @@ class PasswordForm extends React.Component {
   }
 }
 
-const passwordRegex = new RegExp('^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&])(?=.{8,})');
+const passwordRegex = new RegExp('^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()])(?=.{8,})');
 
 export default PasswordForm;
