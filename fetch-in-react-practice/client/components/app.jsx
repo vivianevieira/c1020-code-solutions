@@ -23,12 +23,9 @@ export default class App extends React.Component {
      * Then 😉, once the response JSON is received and parsed,
      * update state with the received todos.
      */
-
     fetch('/api/todos')
       .then(response => response.json())
       .then(data => this.setState({ todos: data }));
-
-    console.log(this.state.todos);
   }
 
   addTodo(newTodo) {
@@ -70,12 +67,9 @@ export default class App extends React.Component {
      * And specify the "Content-Type" header as "application/json"
      */
     const todos = this.state.todos;
-    // let index = 0;
     let data = {};
     for (let i = 0; i < todos.length; i++) {
       if (todos[i].todoId === todoId) {
-        console.log(todos[i]);
-        // index = i;
         data = { isCompleted: !todos[i].isCompleted };
       }
     }
@@ -96,7 +90,6 @@ export default class App extends React.Component {
           }
           return todo;
         });
-        console.log('array', newArray);
         this.setState({ todos: newArray });
       }
       );
