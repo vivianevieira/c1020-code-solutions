@@ -95,7 +95,7 @@ class Accordion extends React.Component {
   render() {
     return (
       <div>
-        <TopicList openIndex={this.state.openIndex} handleClick={this.handleClick} />
+        <TopicList topics={props.topics} openIndex={this.state.openIndex} handleClick={this.handleClick} />
       </div>
     );
   }
