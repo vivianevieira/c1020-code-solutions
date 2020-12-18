@@ -1,0 +1,52 @@
+User can sign up.
+  - On the sign-in page, the welcome message renders differently according to the
+  route.path (this obj value is passed by a React Context object and a Provider
+  component)
+  - the form listens to onSubmit events and calls the handleSubmit function defined
+  inside the component.
+  - handleSubmit submits an API fetch request with POST method using the URL path
+  to sign-up.
+  - username and password are passed on the body of the request from client to server.
+  - if no username or no password are submited, the server responds with an error message
+  to the client.
+  - otherwise the password is hashed by the server (argon.hash()).
+  - hashed password and username are added into the users table of the db
+ - the user account is created.
+ - the server catches any possible error on the server side.
+
+User can sign in.
+  - the sign-in page renders accordingly. A function renderPage() is called within
+  the App component and is able to check that the state.route.path is equal to 'sign-in'.
+  - the form listens to onSubmit actions and calls the handleSubmit(event) function.
+  - a POST fetch call is submited to the server on URL path ending in 'sign-in'.
+  - in order to obtain the username and password, the form listens to onChange
+  events on the input elements and calls the handleChange(event) function.
+  - handleChange() changes the state of username and password properties.
+  - the fetch request passes the state properties (username and passowrd) in the
+  body of the http request.
+  - if no username or password information is passed, the server returns with
+  an 'invalid login' error message to the client.
+  - otherwise, the userid and hashed password are queried in the database.
+  - if no user is found, the user will see an 'invalid login' message.
+  - otherwise, if the password matches the user's stored password, a token and user
+  information are returned.
+  - the server also catches any server-side error.
+  - the handleSignIn function is called with the resulting username/password
+  passed as an argument.
+  - the resulting token is stored to local storage and the state changes with the
+  resulting user information.
+  - the page renders again.
+  - componentDidMount() is called and listesns to 'hashchange' events.
+  - it changes the sate of the route property with a value of the location hash
+  of the URL.
+  - the PageContainer element is rendered according to the state.route.path.
+  - In the case of a successful login, the Home component is returned.
+  - Home component checks to confirm valid user information exists (passed by
+  this.context.user) and renders the home page content.
+(user is assigned the token value when the function componentDidMount() is called.
+It would be null if token value is empty.)
+
+User can stay signed in.
+- the value of token was previously set on local storage upon user successful sign in.
+- local storage is accessed after the page renders (during componentDidMount()) and the
+home page conent renders accordingly (it checks to see if user sate is or is not null).
